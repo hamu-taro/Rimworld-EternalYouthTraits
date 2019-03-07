@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<TraitDef>
+		<defName>EternalYouth</defName>
+		<commonality>0.00</commonality>
+		<commonalityFemale>0.00</commonalityFemale>
+		<degreeDatas>
+			<li>
+				<label>Eternal Youth</label>
+				<description>[PAWN_nameDef] is EternalYouth.</description>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+</Defs>

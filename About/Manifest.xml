@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+  <identifier>Eternal Youth Traits</identifier>
+  <dependencies>
+    <li>HugsLib</li>
+  </dependencies>
+  <incompatibleWith />
+  <loadAfter>
+    <li>HugsLib</li>
+  </loadAfter>
+</Manifest>
