@@ -7,8 +7,8 @@
 		<commonalityFemale>0.00</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>Eternal Youth</label>
-				<description>[PAWN_nameDef] is EternalYouth.</description>
+				<label>eternal youth</label>
+				<description>[PAWN_nameDef] is never aging.</description>
 			</li>
 		</degreeDatas>
 	</TraitDef>

@@ -7,5 +7,11 @@
 	<supportedVersions>
 		<li>1.0</li>
 	</supportedVersions>
-	<description>Eternal Youth Traits</description>
+<description>Eternal Youth Traits MOD.
+
+Load Order
+- Core
+- HugsLib
+- Eternal Youth Traits
+</description>
 </ModMetaData>
