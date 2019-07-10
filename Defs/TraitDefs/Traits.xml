@@ -4,7 +4,7 @@
 	<TraitDef>
 		<defName>EternalYouth</defName>
 		<commonality>0.00</commonality>
-		<commonalityFemale>0.00</commonalityFemale>
+		<commonalityFemale>0.01</commonalityFemale>
 		<degreeDatas>
 			<li>
 				<label>eternal youth</label>
