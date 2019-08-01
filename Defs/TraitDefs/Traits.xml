@@ -12,4 +12,17 @@
 			</li>
 		</degreeDatas>
 	</TraitDef>
+
+	<TraitDef>
+		<defName>EternalImmortal</defName>
+		<commonality>0.00</commonality>
+		<commonalityFemale>0.01</commonalityFemale>
+		<degreeDatas>
+		<li>
+	 		<label>eternal Immortal</label>
+	 		<description>[PAWN_nameDef] is never die.</description>
+	 	</li>
+		</degreeDatas>
+	</TraitDef>
+
 </Defs>

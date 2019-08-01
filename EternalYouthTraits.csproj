@@ -85,8 +85,6 @@
     <Content Include="About\About.xml" />
     <Content Include="About\Manifest.xml" />
     <Content Include="Defs\TraitDefs\Traits.xml" />
-    <Content Include="Languages\English\DefInjected\TraitDef\Traits.xml" />
-    <Content Include="Languages\English\Keyed\EternalYouthTraits.xml" />
     <Content Include="Languages\Japanese\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\Japanese\Keyed\EternalYouthTraits.xml" />
   </ItemGroup>

@@ -10,6 +10,7 @@ namespace EternalYouthTraits
 	public static partial class core
 	{
 		public static readonly TraitDef EternalYouth = TraitDef.Named("EternalYouth");
+		public static readonly TraitDef EternalImmortal = TraitDef.Named("EternalImmortal");
 
 		public static bool has_traits(Pawn pawn)
 		{
@@ -26,7 +27,13 @@ namespace EternalYouthTraits
 		public static bool has_eternalYouth(Pawn pawn)
 		{
 			if (!has_traits(pawn)) { return false; }
-			return is_human(pawn) && pawn.story.traits.HasTrait(TraitDef.Named("EternalYouth"));
+			return is_human(pawn) && pawn.story.traits.HasTrait(EternalYouth);
+		}
+
+		public static bool has_eternalImmortal(Pawn pawn)
+		{
+			if (!has_traits(pawn)) { return false; }
+			return is_human(pawn) && pawn.story.traits.HasTrait(EternalImmortal);
 		}
 	}
 }
