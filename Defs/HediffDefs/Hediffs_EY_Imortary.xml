@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<HediffDef>
+		<defName>HediffOfEternalImortary</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>EY_Imortary</label>
+		<defaultLabelColor>(0,0.5,1)</defaultLabelColor>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1</maxSeverity>	
+		<isBad>false</isBad>
+		<comps>
+			<li>
+			<compClass>EternalYouthTraits.HediffComp_Imortary</compClass>
+			</li>
+			<li Class="HediffCompProperties_SeverityPerDay">
+			<severityPerDay>0</severityPerDay>
+			</li>	  
+		</comps>
+	</HediffDef>
+
+</Defs>
