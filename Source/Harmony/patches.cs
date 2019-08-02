@@ -85,7 +85,13 @@ namespace EternalYouthTraits
 			if (pawn == null) return true;
 			if (!pawn.Faction.IsPlayer) return true;
 			if (!core.has_eternalImmortal(pawn)) return true;
-
+#if 0
+			if (!pawn.health.hediffSet.HasHediff(core.hediffDefEternalImortary))
+			{
+				Hediff hediff = HediffMaker.MakeHediff(core.hediffDefEternalImortary, pawn, null);
+				pawn.health.AddHediff(hediff);
+			}
+#endif
 			__result = false;
 			return false; //return false to skip execution of the original.
 		}

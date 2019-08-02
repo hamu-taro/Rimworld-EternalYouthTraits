@@ -13,8 +13,8 @@ namespace EternalYouthTraits
 		public static readonly TraitDef TraifDefEternalYouth = TraitDef.Named("EternalYouth");
 		public static readonly TraitDef TraifDefEternalImmortal = TraitDef.Named("EternalImortary");
 
-//		public static HediffDef hediffDefEternalYouth = HediffDef.Named("hediffOfEternalYouth");
-//		public static HediffDef hediffDefEternalImortary = HediffDef.Named("hediffOfEternalImortary");
+//		public static HediffDef hediffDefEternalYouth = HediffDef.Named("HediffOfEternalYouth");
+		public static HediffDef hediffDefEternalImortary = HediffDef.Named("HediffOfEternalImortary");
 
 		public static bool has_traits(Pawn pawn)
 		{
