@@ -4,7 +4,10 @@
   <EternalYouth.degreeDatas.0.label>不老</EternalYouth.degreeDatas.0.label>
   <EternalYouth.degreeDatas.0.description>[PAWN_nameDef]は歳をとらない</EternalYouth.degreeDatas.0.description>
 
-  <EternalImmortal.degreeDatas.0.label>不死っぽい</EternalImmortal.degreeDatas.0.label>
-    <EternalImmortal.degreeDatas.0.description>[PAWN_nameDef]は死なないっぽい</EternalImmortal.degreeDatas.0.description>
+  <EternalImmortal.degreeDatas.0.label>不死</EternalImmortal.degreeDatas.0.label>
+  <EternalImmortal.degreeDatas.0.description>[PAWN_nameDef]は死なない</EternalImmortal.degreeDatas.0.description>
 
+  <EternalImmortary.degreeDatas.0.label>不老不死</EternalImmortary.degreeDatas.0.label>
+  <EternalImmortary.degreeDatas.0.description>[PAWN_nameDef]は決して老いないし、そして死ぬこともない。</EternalImmortary.degreeDatas.0.description>  
+  
 </LanguageData>

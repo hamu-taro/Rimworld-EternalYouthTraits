@@ -13,14 +13,26 @@
 		</degreeDatas>
 	</TraitDef>
 
+  <TraitDef>
+    <defName>EternalImmortal</defName>
+    <commonality>0.00</commonality>
+    <commonalityFemale>0.01</commonalityFemale>
+    <degreeDatas>
+      <li>
+        <label>Immortal</label>
+        <description>[PAWN_nameDef] is never die.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>  
+  
 	<TraitDef>
-		<defName>EternalImortary</defName>
+		<defName>EternalImmortary</defName>
 		<commonality>0.00</commonality>
 		<commonalityFemale>0.01</commonalityFemale>
 		<degreeDatas>
 		<li>
-	 		<label>eternal Immortal</label>
-	 		<description>[PAWN_nameDef] is never die.</description>
+	 		<label>Imortary</label>
+	 		<description>[PAWN_nameDef] is never aging, never die.</description>
 	 	</li>
 		</degreeDatas>
 	</TraitDef>
