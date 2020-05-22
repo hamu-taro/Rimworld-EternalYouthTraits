@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<TraitDef>
+		<defName>EternalYouth</defName>
+		<commonality>0.00</commonality>
+		<commonalityFemale>0.01</commonalityFemale>
+		<degreeDatas>
+			<li>
+				<label>eternal youth</label>
+				<description>[PAWN_nameDef] is never aging.</description>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+  <TraitDef>
+    <defName>EternalImmortal</defName>
+    <commonality>0.00</commonality>
+    <commonalityFemale>0.01</commonalityFemale>
+    <degreeDatas>
+      <li>
+        <label>Immortal</label>
+        <description>[PAWN_nameDef] is never die.</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>  
+  
+	<TraitDef>
+		<defName>EternalImmortary</defName>
+		<commonality>0.00</commonality>
+		<commonalityFemale>0.01</commonalityFemale>
+		<degreeDatas>
+		<li>
+	 		<label>Imortary</label>
+	 		<description>[PAWN_nameDef] is never aging, never die.</description>
+	 	</li>
+		</degreeDatas>
+	</TraitDef>
+
+</Defs>
