@@ -3,6 +3,7 @@
 <ModMetaData>
 	<name>Eternal Youth Traits</name>
 	<author>hamu-taro</author>
+	<packageId>hams.EternalYouthTraits</packageId>
 	<url>https://github.com/hamu-taro/Rimworld-EternalYouthTraits</url>
 	<supportedVersions>
 		<li>1.0</li>
