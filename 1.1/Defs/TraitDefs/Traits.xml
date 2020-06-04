@@ -7,8 +7,8 @@
 		<commonalityFemale>0.01</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>eternal youth</label>
-				<description>[PAWN_nameDef] is never aging.</description>
+				<label>Eternal Youth</label>
+				<description>Can Die but Doesn't age (Lobsters-Humans maybe in the future).</description>
 			</li>
 		</degreeDatas>
 	</TraitDef>
@@ -19,8 +19,8 @@
     <commonalityFemale>0.01</commonalityFemale>
     <degreeDatas>
       <li>
-        <label>Immortal</label>
-        <description>[PAWN_nameDef] is never die.</description>
+        <label>Ammortal</label>
+        <description>cannot die-was never living (Robots-Gods).</description>
       </li>
     </degreeDatas>
   </TraitDef>  
@@ -31,8 +31,8 @@
 		<commonalityFemale>0.01</commonalityFemale>
 		<degreeDatas>
 		<li>
-	 		<label>Imortary</label>
-	 		<description>[PAWN_nameDef] is never aging, never die.</description>
+	 		<label>Immortal</label>
+	 		<description>Can not die or age (DemiGods).</description>
 	 	</li>
 		</degreeDatas>
 	</TraitDef>

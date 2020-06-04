@@ -25,7 +25,17 @@ Rimworld 1.1 を対象としています。
 ## 不老不死特性
 不老特性と不死特性を組み合わせて特性です。   
 
+# 協力者
+以下の方に協力してもらいました、ありがとうございます。  
+@superomgj 様(英語版テキスト作成)  
+
 # 履歴
+## version 1.1.1
+- 英語版の表記を変更しました  
+-- eternal youth -> Eternal Youth  
+-- Immortal -> Ammortal  
+-- Imortary -> Immortal  
+
 ## version 1.1.0
 - v1.1 に対応しました  
 
