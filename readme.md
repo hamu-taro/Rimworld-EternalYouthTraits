@@ -28,11 +28,12 @@ Rimworld 1.1 を対象としています。
 # 協力者
 以下の方に協力してもらいました、ありがとうございます。  
 @superomgj 様(英語版テキスト作成)  
+@Benjamin Badly 様(英語版テキスト修正)  
 
 # 履歴
 ## version 1.1.1
 - 英語版の表記を変更しました  
--- eternal youth -> Eternal Youth  
+-- eternal youth -> Eternal youth  
 -- Immortal -> Ammortal  
 -- Imortary -> Immortal  
 

@@ -7,8 +7,8 @@
 		<commonalityFemale>0.01</commonalityFemale>
 		<degreeDatas>
 			<li>
-				<label>Eternal Youth</label>
-				<description>Can Die but Doesn't age (Lobsters-Humans maybe in the future).</description>
+				<label>Eternal youth</label>
+				<description>does not age.</description>
 			</li>
 		</degreeDatas>
 	</TraitDef>
@@ -20,7 +20,7 @@
     <degreeDatas>
       <li>
         <label>Ammortal</label>
-        <description>cannot die-was never living (Robots-Gods).</description>
+        <description>was never living.</description>
       </li>
     </degreeDatas>
   </TraitDef>  
@@ -32,7 +32,7 @@
 		<degreeDatas>
 		<li>
 	 		<label>Immortal</label>
-	 		<description>Can not die or age (DemiGods).</description>
+	 		<description>cannot die or age.</description>
 	 	</li>
 		</degreeDatas>
 	</TraitDef>
