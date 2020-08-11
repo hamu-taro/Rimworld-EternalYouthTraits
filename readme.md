@@ -31,6 +31,9 @@ Rimworld 1.1 を対象としています。
 @Benjamin Badly 様(英語版テキスト修正)  
 
 # 履歴
+## version 1.2.0
+- v1.2 に対応しました  
+
 ## version 1.1.1
 - 英語版の表記を変更しました  
 -- eternal youth -> Eternal youth  
