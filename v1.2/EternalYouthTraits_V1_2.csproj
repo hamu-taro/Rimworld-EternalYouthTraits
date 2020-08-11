@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A08DF92D-EECE-4F02-976E-CB577281D9DF}</ProjectGuid>
+    <ProjectGuid>{4B7F4AB3-3107-46FC-BDA0-81F2BAFA5131}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
     <AssemblyName>EternalYouthTraits</AssemblyName>
@@ -70,6 +70,7 @@
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
