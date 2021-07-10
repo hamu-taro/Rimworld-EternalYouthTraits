@@ -3,7 +3,7 @@
 キャラ生成時に不老特性が付く可能性は0.01%です。  
 [EdB Prepare Carefully]等を使って手動で特性を付与する必要があります。  
 
-Rimworld 1.1 を対象としています。  
+Rimworld 1.1/1.2/1.3 を対象としています。  
 
 ## MODの読み込みの順番(Load order)
 - Core  
@@ -31,6 +31,9 @@ Rimworld 1.1 を対象としています。
 @Benjamin Badly 様(英語版テキスト修正)  
 
 # 履歴
+## version 1.3.0
+- v1.3 に対応しました  
+
 ## version 1.2.0
 - v1.2 に対応しました  
 
