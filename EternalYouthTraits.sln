@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalYouthTraits_V1_1", "1.1\EternalYouthTraits_V1_1.csproj", "{A08DF92D-EECE-4F02-976E-CB577281D9DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalYouthTraits_V1_2", "v1.2\EternalYouthTraits_V1_2.csproj", "{4B7F4AB3-3107-46FC-BDA0-81F2BAFA5131}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalYouthTraits_V1_2", "1.2\EternalYouthTraits_V1_2.csproj", "{4B7F4AB3-3107-46FC-BDA0-81F2BAFA5131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalYouthTraits_V1_3", "v1.3\EternalYouthTraits_V1_3.csproj", "{44914E00-9959-403A-AD5B-8A30DDB0B0FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EternalYouthTraits_V1_3", "1.3\EternalYouthTraits_V1_3.csproj", "{44914E00-9959-403A-AD5B-8A30DDB0B0FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
