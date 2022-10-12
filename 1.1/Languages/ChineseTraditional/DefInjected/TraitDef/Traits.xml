@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <EternalYouth.degreeDatas.0.label>不老</EternalYouth.degreeDatas.0.label>
+  <EternalYouth.degreeDatas.0.description>[PAWN_nameDef]不會衰老</EternalYouth.degreeDatas.0.description>
+
+  <EternalImmortal.degreeDatas.0.label>不死</EternalImmortal.degreeDatas.0.label>
+  <EternalImmortal.degreeDatas.0.description>[PAWN_nameDef]不會死亡</EternalImmortal.degreeDatas.0.description>
+
+  <EternalImmortary.degreeDatas.0.label>不朽</EternalImmortary.degreeDatas.0.label>
+  <EternalImmortary.degreeDatas.0.description>[PAWN_nameDef]不會衰老也不會死亡</EternalImmortary.degreeDatas.0.description>  
+  
+</LanguageData>
