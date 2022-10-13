@@ -3,8 +3,8 @@
 <Defs>
 	<TraitDef>
 		<defName>EternalYouth</defName>
-		<commonality>0.00</commonality>
-		<commonalityFemale>0.01</commonalityFemale>
+		<commonality>0</commonality>
+		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 			<li>
 				<label>Eternal youth</label>
@@ -13,22 +13,22 @@
 		</degreeDatas>
 	</TraitDef>
 
-  <TraitDef>
-    <defName>EternalImmortal</defName>
-    <commonality>0.00</commonality>
-    <commonalityFemale>0.01</commonalityFemale>
-    <degreeDatas>
-      <li>
-        <label>Ammortal</label>
-        <description>was never living.</description>
-      </li>
-    </degreeDatas>
-  </TraitDef>  
+	<TraitDef>
+		<defName>EternalImmortal</defName>
+		<commonality>0</commonality>
+		<commonalityFemale>0</commonalityFemale>
+		<degreeDatas>
+			<li>
+				<label>Ammortal</label>
+				<description>was never living.</description>
+			</li>
+		</degreeDatas>
+	</TraitDef>  
   
 	<TraitDef>
 		<defName>EternalImmortary</defName>
-		<commonality>0.00</commonality>
-		<commonalityFemale>0.01</commonalityFemale>
+		<commonality>0</commonality>
+		<commonalityFemale>0</commonalityFemale>
 		<degreeDatas>
 		<li>
 	 		<label>Immortal</label>
