@@ -50,7 +50,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Common\core.cs" />
+    <Compile Include="Source\Common\EYTDefOf.cs" />
     <Compile Include="Source\Harmony\patches.cs" />
+    <Compile Include="Source\HediffComp\HediffComp_Regeneration.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -76,9 +78,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Defs\HediffDefs\Hediffs_ImmortalRegeneration.xml" />
     <Content Include="Defs\TraitDefs\Traits.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Languages\ChineseSimplified\DefInjected\TraitDef\Traits.xml" />
+    <Content Include="Languages\ChineseSimplified\Keyed\EternalYouthTraits.xml" />
+    <Content Include="Languages\ChineseTraditional\DefInjected\TraitDef\Traits.xml" />
+    <Content Include="Languages\ChineseTraditional\Keyed\EternalYouthTraits.xml" />
     <Content Include="Languages\Japanese\DefInjected\TraitDef\Traits.xml" />
     <Content Include="Languages\Japanese\Keyed\EternalYouthTraits.xml" />
   </ItemGroup>
