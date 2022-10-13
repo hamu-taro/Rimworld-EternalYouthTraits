@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using HarmonyLib;
-using RimWorld;
+using System.Linq;
 using Verse;
-using Verse.AI.Group;
 
 
 namespace EternalYouthTraits
@@ -97,7 +95,6 @@ namespace EternalYouthTraits
 							if(Array.IndexOf(restoreHediffArray, rec.def.defName) >= 0)
 							{
 								pawn.health.RemoveHediff(rec);
-								break;
 							}
 						}
 					}

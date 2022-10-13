@@ -46,5 +46,11 @@ namespace EternalYouthTraits
 		}
 		
 
+
+		public static void Message(string message)
+		{
+			Log.Message($"[EternalYouthTraits] {message}");
+		}
+
 	}
 }

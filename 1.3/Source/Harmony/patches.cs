@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -26,8 +28,8 @@ namespace EternalYouthTraits
 			harmonyInstance.Patch(AccessTools.Method(typeof(IncidentWorker_DiseaseHuman), "PotentialVictimCandidates"),
 					prefix: new HarmonyMethod(patchType, nameof(prefix_PotentialVictimCandidates_EternalImmortalTraits)));
 
-			harmonyInstance.Patch(AccessTools.Method(typeof(GenSpawn), "Spawn"), 
-					postfix: new HarmonyMethod(patchType, nameof(postfix_Spawn_EternalImmortalTraits)));
+//			harmonyInstance.Patch(AccessTools.Method(typeof(GenSpawn), "Spawn"), 
+//					postfix: new HarmonyMethod(patchType, nameof(postfix_Spawn_EternalImmortalTraits)));
 		}
 
 		// -------------------------------------------------------------------------
@@ -76,15 +78,21 @@ namespace EternalYouthTraits
 			__result = tempList.Except(removalList);
 		}
 
-		static void postfix_Spawn_EternalImmortalTraits(ref Thing __result)
-		{
-			if (__result != null && __result is Pawn)
-			{
-				Pawn pawn = __result as Pawn;
 
-				if (core.has_eternalImmortal(pawn) || core.has_eternalImmortary(pawn))
+		[HarmonyPatch(typeof(GenSpawn), "Spawn", new Type[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(Rot4), typeof(WipeMode), typeof(bool) })]
+		static class Patch_GenSpawn_Spawn
+		{
+			[HarmonyPostfix]
+			static void postfix_Spawn_EternalImmortalTraits(ref Thing __result)
+			{
+				if (__result != null && __result is Pawn)
 				{
-					HealthUtility.AdjustSeverity(pawn, EYTDefOf.EYT_ImmortalRegeneration, 1.0f);
+					Pawn pawn = __result as Pawn;
+
+					if (core.has_eternalImmortal(pawn) || core.has_eternalImmortary(pawn))
+					{
+						HealthUtility.AdjustSeverity(pawn, EYTDefOf.EYT_ImmortalRegeneration, 1.0f);
+					}
 				}
 			}
 		}
