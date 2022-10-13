@@ -17,6 +17,7 @@ namespace EternalYouthTraits
 
 		static HarmonyPatches()
 		{
+			Log.Message("rimworld.hamutaro.EternalYouthTraits HarmonyPatches.");
 			Harmony harmonyInstance = new Harmony( "rimworld.hamutaro.EternalYouthTraits");
 
 			harmonyInstance.Patch(original: AccessTools.Method(type: typeof(Pawn_AgeTracker), name: "AgeTick"),
@@ -91,7 +92,7 @@ namespace EternalYouthTraits
 
 					if (core.has_eternalImmortal(pawn) || core.has_eternalImmortary(pawn))
 					{
-						HealthUtility.AdjustSeverity(pawn, EYTDefOf.EYT_ImmortalRegeneration, 1.0f);
+						HealthUtility.AdjustSeverity(pawn, core.EYT_ImmortalRegeneration, 1.0f);
 					}
 				}
 			}

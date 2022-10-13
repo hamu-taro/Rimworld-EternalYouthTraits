@@ -5,7 +5,7 @@
 		<defName>EYT_ImmortalRegeneration</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Immortal</label>
-		<description></description>
+		<description>regeneration</description>
 		<defaultLabelColor>(1, 1, 1)</defaultLabelColor>
 		<scenarioCanAdd>false</scenarioCanAdd>
 		<makesSickThought>false</makesSickThought>
@@ -23,6 +23,8 @@
 		<stages>
 			<li>
 				<label>Immortal</label>
+				<minSeverity>1.0</minSeverity>
+				<becomeVisible>false</becomeVisible>
 			</li>
 		</stages>
 	</HediffDef>

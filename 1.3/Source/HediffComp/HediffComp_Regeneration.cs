@@ -7,7 +7,7 @@ using Verse;
 namespace EternalYouthTraits
 {
 	[StaticConstructorOnStartup]
-	public class HediffComp_ImmortalRegeneration : HediffComp
+	class HediffComp_ImmortalRegeneration : HediffComp
 	{
 		// Ç»Ç¡ÇƒÇ‡Ç∑ÇÆÇ…é°ÇÈÉäÉXÉg
 		// Cataract : îíì‡è·
@@ -42,29 +42,26 @@ namespace EternalYouthTraits
 			base.CompPostTick(ref severityAdjustment);
 
 			// Check to 
-			if (base.Pawn != null) return;
-			if (base.Pawn.Map != null) return;
+			if (this.Pawn == null) return;
+			if (this.Pawn.Map == null) return;
 			if (this.Pawn.Dead) return;
 			if (this.Pawn.DestroyedOrNull()) return;
-			if (!core.has_eternalImmortal(base.Pawn) && !core.has_eternalImmortary(base.Pawn)) return;
+			if (!core.has_eternalImmortal(this.Pawn) && !core.has_eternalImmortary(this.Pawn)) return;
 
 			if (!this.initialized)
 			{
+				Log.Message("rimworld.hamutaro.EternalYouthTraits HediffComp_ImmortalRegeneration:Initialize.");
 				Initialize();
 			}
 
 			if (Find.TickManager.TicksGame % intervalTick == 0)
 			{
-				Pawn pawn = base.Pawn;
-
-				using (IEnumerator<BodyPartRecord> enumerator = pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
+				using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
 				{
-					bool isRegened = false;
-
-					while (enumerator.MoveNext() && !isRegened)
+					while (enumerator.MoveNext())
 					{
 						BodyPartRecord rec = enumerator.Current;
-						IEnumerable<Hediff_Injury> arg_BB_0 = pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
+						IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
 						Func<Hediff_Injury, bool> arg_BB_1;
 
 						arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
@@ -73,19 +70,39 @@ namespace EternalYouthTraits
 						{
 							if (current.CanHealNaturally() && !current.IsPermanent())
 							{
-								current.Heal(0.2f);
+								current.Heal(0.5f);
 							}
 							else
 							{
 								current.Heal(0.1f);
 							}
+						}
+					}
+				}
+#if false
+				using (IEnumerator<Hediff_MissingPart> enumerator = this.Pawn.health.hediffSet.GetMissingPartsCommonAncestors().GetEnumerator())
+				{
+					bool isRegened = false;
+
+					while (enumerator.MoveNext() && !isRegened)
+					{
+						Hediff_MissingPart rec = enumerator.Current;
+
+						IEnumerable<Hediff_MissingPart> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>();
+						Func<Hediff_MissingPart, bool> arg_BB_1;
+
+						arg_BB_1 = ((Hediff_MissingPart missing) => missing.Part == rec);
+
+						foreach (Hediff_MissingPart current in arg_BB_0.Where(arg_BB_1))
+						{
+							current.Heal(0.1f);
 							isRegened = true;
 							break;
 						}
 					}
 				}
-
-				using (IEnumerator<Hediff> enumerator = pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
+#endif
+				using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
 				{
 					while (enumerator.MoveNext())
 					{
@@ -94,7 +111,7 @@ namespace EternalYouthTraits
 						{
 							if(Array.IndexOf(restoreHediffArray, rec.def.defName) >= 0)
 							{
-								pawn.health.RemoveHediff(rec);
+								this.Pawn.health.RemoveHediff(rec);
 							}
 						}
 					}
@@ -102,6 +119,12 @@ namespace EternalYouthTraits
 			}
 		}
 
+		public override void CompExposeData()
+		{
+			base.CompExposeData();
+			Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
+			Scribe_Values.Look<int>(ref this.intervalTick, "intervalTick", 600, false);
+		}
 
 		public string labelCap
 		{

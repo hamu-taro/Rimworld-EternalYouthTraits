@@ -7,8 +7,4 @@ using Verse;
 
 namespace EternalYouthTraits
 {
-	public static class EYTDefOf
-	{
-		public static HediffDef EYT_ImmortalRegeneration;
-	}
 }

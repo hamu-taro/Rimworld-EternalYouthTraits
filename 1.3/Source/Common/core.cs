@@ -15,6 +15,9 @@ namespace EternalYouthTraits
 		public static readonly TraitDef TraifDefEternalImmortal = TraitDef.Named("EternalImmortal");
 		public static readonly TraitDef TraifDefEternalImmortary = TraitDef.Named("EternalImmortary");
 
+		public static readonly HediffDef EYT_ImmortalRegeneration = HediffDef.Named("EYT_ImmortalRegeneration");
+
+
 		public static bool has_traits(Pawn pawn)
 		{
 			return pawn?.story?.traits != null;
