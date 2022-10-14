@@ -29,13 +29,14 @@ namespace EternalYouthTraits
 		};
 
 		private bool initialized = false;
-		private int intervalTick = 600;
+		private int MissingPartsRestoreIntervalTick = 600;
+		private int InjuryPartsRestoreIntervalTick = 60;
+		private int DiseaseRestoreIntervalTick = 60;
 
 		private void Initialize()
 		{
 			this.initialized = true;
 		}
-
 
 		public override void CompPostTick(ref float severityAdjustment)
 		{
@@ -50,58 +51,21 @@ namespace EternalYouthTraits
 
 			if (!this.initialized)
 			{
-				Log.Message("rimworld.hamutaro.EternalYouthTraits HediffComp_ImmortalRegeneration:Initialize.");
 				Initialize();
 			}
 
-			if (Find.TickManager.TicksGame % intervalTick == 0)
+			if (Find.TickManager.TicksGame % InjuryPartsRestoreIntervalTick == 0)
 			{
-				using (IEnumerator<BodyPartRecord> enumerator = this.Pawn.health.hediffSet.GetInjuredParts().GetEnumerator())
-				{
-					while (enumerator.MoveNext())
-					{
-						BodyPartRecord rec = enumerator.Current;
-						IEnumerable<Hediff_Injury> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_Injury>();
-						Func<Hediff_Injury, bool> arg_BB_1;
+				EYTUtility.RegenerateInjuryPart(this.Pawn);
+			}
 
-						arg_BB_1 = ((Hediff_Injury injury) => injury.Part == rec);
+			if (Find.TickManager.TicksGame % MissingPartsRestoreIntervalTick == 0)
+			{
+				EYTUtility.RegenerateMissingPartRandom(this.Pawn, 1);
+			}
 
-						foreach (Hediff_Injury current in arg_BB_0.Where(arg_BB_1))
-						{
-							if (current.CanHealNaturally() && !current.IsPermanent())
-							{
-								current.Heal(0.5f);
-							}
-							else
-							{
-								current.Heal(0.1f);
-							}
-						}
-					}
-				}
-#if false
-				using (IEnumerator<Hediff_MissingPart> enumerator = this.Pawn.health.hediffSet.GetMissingPartsCommonAncestors().GetEnumerator())
-				{
-					bool isRegened = false;
-
-					while (enumerator.MoveNext() && !isRegened)
-					{
-						Hediff_MissingPart rec = enumerator.Current;
-
-						IEnumerable<Hediff_MissingPart> arg_BB_0 = this.Pawn.health.hediffSet.GetHediffs<Hediff_MissingPart>();
-						Func<Hediff_MissingPart, bool> arg_BB_1;
-
-						arg_BB_1 = ((Hediff_MissingPart missing) => missing.Part == rec);
-
-						foreach (Hediff_MissingPart current in arg_BB_0.Where(arg_BB_1))
-						{
-							current.Heal(0.1f);
-							isRegened = true;
-							break;
-						}
-					}
-				}
-#endif
+			if (Find.TickManager.TicksGame % DiseaseRestoreIntervalTick == 0)
+			{
 				using (IEnumerator<Hediff> enumerator = this.Pawn.health.hediffSet.GetHediffs<Hediff>().GetEnumerator())
 				{
 					while (enumerator.MoveNext())
@@ -123,25 +87,11 @@ namespace EternalYouthTraits
 		{
 			base.CompExposeData();
 			Scribe_Values.Look<bool>(ref this.initialized, "initialized", false, false);
-			Scribe_Values.Look<int>(ref this.intervalTick, "intervalTick", 600, false);
+			Scribe_Values.Look<int>(ref this.MissingPartsRestoreIntervalTick, "intervalTick", 600, false);
+			Scribe_Values.Look<int>(ref this.InjuryPartsRestoreIntervalTick, "intervalTick", 60, false);
+			Scribe_Values.Look<int>(ref this.DiseaseRestoreIntervalTick, "intervalTick", 60, false);
 		}
-
-		public string labelCap
-		{
-			get
-			{
-				return base.Def.LabelCap;
-			}
-		}
-
-		public string label
-		{
-			get
-			{
-				return base.Def.label;
-			}
-		}
-
 	}
+
 
 }

@@ -26,11 +26,8 @@ namespace EternalYouthTraits
 			harmonyInstance.Patch(original: AccessTools.Method(type: typeof(Pawn_HealthTracker), name: "ShouldBeDead"),
 					prefix: new HarmonyMethod(patchType, nameof(prefix_ShouldBeDead_EternalImmortalityTraits)));
 
-			harmonyInstance.Patch(AccessTools.Method(typeof(IncidentWorker_DiseaseHuman), "PotentialVictimCandidates"),
-					prefix: new HarmonyMethod(patchType, nameof(prefix_PotentialVictimCandidates_EternalImmortalTraits)));
-
-//			harmonyInstance.Patch(AccessTools.Method(typeof(GenSpawn), "Spawn"), 
-//					postfix: new HarmonyMethod(patchType, nameof(postfix_Spawn_EternalImmortalTraits)));
+			harmonyInstance.Patch(AccessTools.Method(typeof(Scenario), "Notify_NewPawnGenerating"), 
+					postfix: new HarmonyMethod(patchType, nameof(postfix_Notify_NewPawnGenerating)));
 		}
 
 		// -------------------------------------------------------------------------
@@ -62,40 +59,13 @@ namespace EternalYouthTraits
 			return false; //return false to skip execution of the original.
 		}
 
-		// 不死者は病気にならない
-		static void prefix_PotentialVictimCandidates_EternalImmortalTraits(ref IEnumerable<Pawn> __result)
+		public static void postfix_Notify_NewPawnGenerating(Scenario __instance, Pawn pawn, PawnGenerationContext context)
 		{
-			List<Pawn> tempList = __result.ToList();
-			List<Pawn> removalList = new List<Pawn>();
-			removalList.Clear();
+			if (!core.has_eternalImmortal(pawn) && !core.has_eternalImmortary(pawn)) return;
 
-			foreach(Pawn pawn in tempList)
-			{
-				if (core.has_eternalImmortal(pawn) || core.has_eternalImmortary(pawn))
-				{
-					removalList.Add(pawn);
-				}
-			}
-			__result = tempList.Except(removalList);
-		}
-
-
-		[HarmonyPatch(typeof(GenSpawn), "Spawn", new Type[] { typeof(Thing), typeof(IntVec3), typeof(Map), typeof(Rot4), typeof(WipeMode), typeof(bool) })]
-		static class Patch_GenSpawn_Spawn
-		{
-			[HarmonyPostfix]
-			static void postfix_Spawn_EternalImmortalTraits(ref Thing __result)
-			{
-				if (__result != null && __result is Pawn)
-				{
-					Pawn pawn = __result as Pawn;
-
-					if (core.has_eternalImmortal(pawn) || core.has_eternalImmortary(pawn))
-					{
-						HealthUtility.AdjustSeverity(pawn, core.EYT_ImmortalRegeneration, 1.0f);
-					}
-				}
-			}
+			Hediff hediff = HediffMaker.MakeHediff(core.EYT_ImmortalRegeneration, pawn, null);
+			hediff.Severity = 1f;
+			pawn.health.AddHediff(hediff, null, null, null);
 		}
 	}
 
